@@ -42,6 +42,10 @@ const useStyles = makeStyles((theme) => ({
     padding: "10px 20px",
     border: "2px solid black",
   },
+  button: {
+    marginTop: 20,
+    backgroundColor: "#4caf50",
+  },
 }));
 
 const Sidebar = ({ children }) => {
@@ -70,7 +74,7 @@ const Sidebar = ({ children }) => {
               <CopyToClipboard text={me} className={classes.margin}>
                 <Button
                   variant="contained"
-                  color="primary"
+                  className={classes.button}
                   fullWidth
                   startIcon={<Assignment fontSize="large" />}
                 >
@@ -102,11 +106,10 @@ const Sidebar = ({ children }) => {
               ) : (
                 <Button
                   variant="contained"
-                  color="primary"
+                  className={classes.button}
                   startIcon={<Phone fontSize="large" />}
                   fullWidth
                   onClick={() => callUser(idToCall)}
-                  className={classes.margin}
                 >
                   Call
                 </Button>

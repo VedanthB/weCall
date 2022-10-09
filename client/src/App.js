@@ -1,17 +1,21 @@
-import { Typography, AppBar } from "@material-ui/core";
+import { Typography, AppBar, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Notifications, Sidebar, VideoPlayer } from "./components";
+import LocalPhoneIcon from "@material-ui/icons/LocalPhone";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
     borderRadius: 15,
-    margin: "30px 100px",
+    marginBottom: "6rem",
     display: "flex",
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
-    width: "600px",
+    width: "100%",
     border: "2px solid black",
+    padding: "1rem",
+    color: "white",
+    backgroundColor: "#4caf50",
 
     [theme.breakpoints.down("xs")]: {
       width: "90%",
@@ -34,9 +38,16 @@ const App = () => {
   return (
     <div className={classes.wrapper}>
       <AppBar className={classes.appBar} position="static" color="inherit">
+        <div style={{ display: "flex", gap: "0.5rem" }}>
+          <LocalPhoneIcon />
+
+          <h2> weChat </h2>
+        </div>
         <Typography variant="h4" align="center">
           Video Chat
         </Typography>
+
+        <Button color="inherit">GitHub</Button>
       </AppBar>
       <VideoPlayer />
       <Sidebar>
