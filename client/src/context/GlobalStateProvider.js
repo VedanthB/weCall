@@ -10,8 +10,8 @@ import Peer from "simple-peer";
 
 const StateContext = createContext();
 
-const socket = io("http://localhost:2000");
-// const socket = io("https://warm-wildwood-81069.herokuapp.com");
+// const socket = io("http://localhost:2000");
+const socket = io("https://wechat-mc4c.onrender.com/");
 
 const GlobalStateProvider = ({ children }) => {
   const [callAccepted, setCallAccepted] = useState(false);
