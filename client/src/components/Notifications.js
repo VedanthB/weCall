@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Button } from "@material-ui/core";
 
-import { SocketContext } from "../Context";
+import { useGlobalContext } from "../context";
 
 const Notifications = () => {
-  const { answerCall, call, callAccepted } = useContext(SocketContext);
+  const { answerCall, call, callAccepted } = useGlobalContext();
 
   return (
     <>

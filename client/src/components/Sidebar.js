@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import {
   Button,
   TextField,
@@ -11,7 +11,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Assignment, Phone, PhoneDisabled } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
 
-import { SocketContext } from "../Context";
+import { useGlobalContext } from "../context";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,8 +46,10 @@ const useStyles = makeStyles((theme) => ({
 
 const Sidebar = ({ children }) => {
   const { me, callAccepted, name, setName, callEnded, leaveCall, callUser } =
-    useContext(SocketContext);
+    useGlobalContext();
+
   const [idToCall, setIdToCall] = useState("");
+
   const classes = useStyles();
 
   return (
