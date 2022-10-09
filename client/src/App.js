@@ -1,5 +1,6 @@
 import { Typography, AppBar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { Notifications, Sidebar, VideoPlayer } from "./components";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -37,10 +38,10 @@ const App = () => {
           Video Chat
         </Typography>
       </AppBar>
-      {/* <VideoPlayer /> */}
-      {/* <Sidebar>
-          <Notifications />
-        </Sidebar> */}
+      <VideoPlayer />
+      <Sidebar>
+        <Notifications />
+      </Sidebar>
     </div>
   );
 };
